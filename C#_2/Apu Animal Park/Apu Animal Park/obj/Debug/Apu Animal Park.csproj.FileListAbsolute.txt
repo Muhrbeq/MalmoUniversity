@@ -1,0 +1,16 @@
+D:\Skola\Malmo\C#_2\Apu Animal Park\Apu Animal Park\bin\Debug\Apu Animal Park.exe.config
+D:\Skola\Malmo\C#_2\Apu Animal Park\Apu Animal Park\bin\Debug\Apu Animal Park.exe
+D:\Skola\Malmo\C#_2\Apu Animal Park\Apu Animal Park\bin\Debug\Apu Animal Park.pdb
+D:\Skola\Malmo\C#_2\Apu Animal Park\Apu Animal Park\obj\Debug\Apu Animal Park.csproj.AssemblyReference.cache
+D:\Skola\Malmo\C#_2\Apu Animal Park\Apu Animal Park\obj\Debug\Apu Animal Park.csproj.SuggestedBindingRedirects.cache
+D:\Skola\Malmo\C#_2\Apu Animal Park\Apu Animal Park\obj\Debug\MainWindow.g.cs
+D:\Skola\Malmo\C#_2\Apu Animal Park\Apu Animal Park\obj\Debug\App.g.cs
+D:\Skola\Malmo\C#_2\Apu Animal Park\Apu Animal Park\obj\Debug\Apu Animal Park_MarkupCompile.cache
+D:\Skola\Malmo\C#_2\Apu Animal Park\Apu Animal Park\obj\Debug\Apu Animal Park_MarkupCompile.lref
+D:\Skola\Malmo\C#_2\Apu Animal Park\Apu Animal Park\obj\Debug\MainWindow.baml
+D:\Skola\Malmo\C#_2\Apu Animal Park\Apu Animal Park\obj\Debug\Apu Animal Park.g.resources
+D:\Skola\Malmo\C#_2\Apu Animal Park\Apu Animal Park\obj\Debug\Apu_Animal_Park.Properties.Resources.resources
+D:\Skola\Malmo\C#_2\Apu Animal Park\Apu Animal Park\obj\Debug\Apu Animal Park.csproj.GenerateResource.cache
+D:\Skola\Malmo\C#_2\Apu Animal Park\Apu Animal Park\obj\Debug\Apu Animal Park.csproj.CoreCompileInputs.cache
+D:\Skola\Malmo\C#_2\Apu Animal Park\Apu Animal Park\obj\Debug\Apu Animal Park.exe
+D:\Skola\Malmo\C#_2\Apu Animal Park\Apu Animal Park\obj\Debug\Apu Animal Park.pdb
