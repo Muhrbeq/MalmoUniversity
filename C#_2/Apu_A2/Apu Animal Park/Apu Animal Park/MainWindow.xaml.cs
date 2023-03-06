@@ -18,9 +18,9 @@ using System.Xml.Linq;
 using System.Xml.Serialization;
 using Apu_Animal_Park.Animals;
 using System.Runtime.InteropServices;
-using Apu_Animal_Park.Birds;
-using Apu_Animal_Park.Insects;
-using Apu_Animal_Park.Marines;
+//using Apu_Animal_Park.Birds;
+//using Apu_Animal_Park.Insects;
+//using Apu_Animal_Park.Marines;
 using System.Runtime.InteropServices.WindowsRuntime;
 
 namespace Apu_Animal_Park
@@ -35,7 +35,7 @@ namespace Apu_Animal_Park
         List<string> animals = new List<string>();
 
         //Reference variable
-        private Animal animal = new Animal();
+        private AnimalManager animalManager = new AnimalManager();
 
         public MainWindow()
         {
@@ -43,6 +43,8 @@ namespace Apu_Animal_Park
 
             //Init GUI listboxes
             InitializeGUI();
+
+            
         }
 
         private void InitializeGUI()
@@ -57,6 +59,22 @@ namespace Apu_Animal_Park
 
             //Fill animallist for checkbox
             FillAnimalList();
+
+            //Headings for listbox
+            txbl_AnimalListHeading.Text = "  ID\tName\t\tAge\tGender";
+        }
+
+        private void UpdateManagerListBox()
+        {
+            string[] listboxItems = new string[animalManager.Count()];
+
+            for(int i = 0; i< listboxItems.Length; i++)
+            {
+                Animal animal = animalManager.GetAnimalAt(i);
+                listboxItems[i] = animal.Id + "\t" + animal.Name + "\t" + animal.Age + "\t" + animal.Gender.ToString();
+            }
+
+            lsb_Animals.ItemsSource = listboxItems;
         }
 
         /// <summary>
@@ -108,8 +126,10 @@ namespace Apu_Animal_Park
         /// <summary>
         /// Reads the input from GUI
         /// </summary>
-        private void ReadInput()
+        private Animal ReadInput()
         {
+            Animal animal = null;
+
             //Set standard category
             CategoryType category = CategoryType.Mammal;
 
@@ -129,11 +149,11 @@ namespace Apu_Animal_Park
             {
                 case CategoryType.Mammal:
                     animal = CreateMammal();
-                    animal.Id = "M001";
+                    animal.Id = animalManager.GetNewID(CategoryType.Mammal);
                     break;
                 case CategoryType.Reptile:
                     animal = CreateReptile();
-                    animal.Id = "R001";
+                    animal.Id = animalManager.GetNewID(CategoryType.Reptile);
                     break;
                 //case CategoryType.Marine:
                 //    animal = CreateMarine();
@@ -150,7 +170,7 @@ namespace Apu_Animal_Park
             }
 
             //Read input from GUI
-            animal.Name = txb_NameOfAnimal.Text;
+            
 
             //Fail safe to handle all inputs
             int animalAge = 0;
@@ -158,9 +178,14 @@ namespace Apu_Animal_Park
             {
                 MessageBox.Show("Please give a valid input of animal age");
             }
+
+            animal.Name = txb_NameOfAnimal.Text;
+
             animal.Age = animalAge;
             animal.Gender = (GenderType)lsb_GenderType.SelectedIndex;
             animal.Category = category;
+
+            return animal;
             
         }
 
@@ -465,8 +490,10 @@ namespace Apu_Animal_Park
         /// <param name="e"></param>
         private void btn_AddAnimal_Click(object sender, RoutedEventArgs e)
         {
-            ReadInput();
-            txbl_AnimalInfo.Text = animal.ToString();
+            Animal animal = ReadInput();
+            //txbl_AnimalInfo.Text = animal.ToString();
+            animalManager.Add(animal);
+            UpdateManagerListBox();
             ResetGUI();
         }
 
@@ -718,6 +745,25 @@ namespace Apu_Animal_Park
         private void btn_Reset_Click(object sender, RoutedEventArgs e)
         {
             ResetGUI();
+        }
+
+        private void lsb_Animals_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            int index = lsb_Animals.SelectedIndex;
+            if (index == -1)
+                return;
+
+            Animal animal = animalManager.GetAnimalAt(index);
+
+            FoodSchedule foodSchedule = animal.GetFoodSchedule();
+
+            txbl_EaterTypeDef.Text = foodSchedule.EaterType.ToString();
+            string[] foodList = foodSchedule.GetFoodListInfoStrings();
+
+            //lsb_FoodSchedule.Items.Clear();
+            lsb_FoodSchedule.ItemsSource = foodList;
+
+            txbl_AnimalInfo.Text = animal.GetExtraInfo();
         }
     }
 }

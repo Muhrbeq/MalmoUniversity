@@ -12,9 +12,12 @@ namespace Apu_Animal_Park
         private double _swingAltitude;
         private int _eatAmountBananas;
 
+        FoodSchedule _foodSchedule;
+
         public Monkey(int numberOfTeeth, int amountOfLegs) : base(numberOfTeeth, amountOfLegs)
         {
             _swingAltitude = 0;
+            SetFoodSchedule();
         }
 
         public double SwingAltitude
@@ -35,14 +38,23 @@ namespace Apu_Animal_Park
             return strOut;
         }
 
+        private void SetFoodSchedule()
+        {
+            _foodSchedule = new FoodSchedule();
+            _foodSchedule.EaterType = EaterType.Omnivorous;
+            _foodSchedule.Add("Morning: Banans");
+            _foodSchedule.Add("Lunch: Bananas");
+            _foodSchedule.Add("Evening: More bananas");
+        }
+
         public override FoodSchedule GetFoodSchedule()
         {
-            throw new NotImplementedException();
+            return _foodSchedule;
         }
 
         public override string GetExtraInfo()
         {
-            throw new NotImplementedException();
+            return ToString();
         }
 
     }

@@ -13,6 +13,8 @@ namespace Apu_Animal_Park
         private int _woofLevel;
         private string _breed;
 
+        private FoodSchedule _foodSchedule;
+
         public Dog() : this(0, 0)
         {
             
@@ -21,6 +23,8 @@ namespace Apu_Animal_Park
         public Dog(int numberOfTeeth, int amountOfLegs) : base(numberOfTeeth, amountOfLegs)
         {
             _breed = "Unknown";
+
+            SetFoodSchedule();
         }
 
         public string Breed
@@ -41,14 +45,23 @@ namespace Apu_Animal_Park
             return strOut;
         }
 
+        private void SetFoodSchedule()
+        {
+            _foodSchedule = new FoodSchedule();
+            _foodSchedule.EaterType = EaterType.Omnivorous;
+            _foodSchedule.Add("Morning: Flakes");
+            _foodSchedule.Add("Lunch: Bones");
+            _foodSchedule.Add("Evening: Meat");
+        }
+
         public override FoodSchedule GetFoodSchedule()
         {
-            throw new NotImplementedException();
+            return _foodSchedule;
         }
 
         public override string GetExtraInfo()
         {
-            throw new NotImplementedException();
+            return ToString();
         }
     }
 }

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Apu_Animal_Park
 {
-    internal class Reptile : Animal
+    internal abstract class Reptile : Animal
     {
         //Private variable
         private int _amountOfLegs;
@@ -37,6 +37,7 @@ namespace Apu_Animal_Park
 
             return strOut;
         }
+
     }
 
     /// <summary>

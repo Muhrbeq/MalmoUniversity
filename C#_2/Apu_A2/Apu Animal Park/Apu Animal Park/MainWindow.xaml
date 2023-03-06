@@ -285,15 +285,75 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
 
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30"/>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+
             <Border BorderBrush="Black"
                     BorderThickness="0.5"
                     Margin="0,0,0,0"
-                    Grid.RowSpan="1"
-                    Grid.ColumnSpan="1"
+                    Grid.RowSpan="2"
+                    Grid.ColumnSpan="3"
                     Grid.Column="0">
             </Border>
 
-            <TextBlock x:Name="txbl_AnimalInfo"/>
+            <TextBlock Text="List of registered animals"
+                       Grid.Column="0"
+                       Grid.Row="0"
+                       Margin="10,0,0,0"/>
+
+            <TextBlock x:Name="txbl_AnimalInfo"
+                       Grid.Column="0"
+                       Grid.Row="1"
+                       Margin="10"/>
+
+            <TextBlock x:Name="txbl_AnimalListHeading"
+                       Grid.Column="1"
+                       Grid.Row="0"
+                       HorizontalAlignment="Left"
+                       VerticalAlignment="Bottom"
+                       Margin="10,0,0,0"
+                       FontSize="12"
+                       />
+
+            <ListBox x:Name="lsb_Animals"
+                     Grid.Row="1"
+                     Grid.Column="1"
+                     Margin="10" SelectionChanged="lsb_Animals_SelectionChanged"/>
+
+            
+
+            <StackPanel Orientation="Horizontal"
+                        Grid.Column="2"
+                       Grid.Row="0">
+
+                <TextBlock x:Name="txbl_EaterType"
+                       Grid.Column="2"
+                       Grid.Row="0"
+                       HorizontalAlignment="Left"
+                       VerticalAlignment="Bottom"
+                       Margin="10,0,0,0"
+                       FontSize="12"
+                       Text="Eater Type"
+                       />
+
+                <TextBlock x:Name="txbl_EaterTypeDef"
+                       HorizontalAlignment="Left"
+                       VerticalAlignment="Bottom"
+                       Margin="50,0,0,0"
+                       FontSize="12"
+                       />
+
+
+            </StackPanel>
+
+            <ListBox x:Name="lsb_FoodSchedule"
+                       Grid.Column="2"
+                       Grid.Row="1"
+                       Margin="10"/>
+            
+            
 
         </Grid>
 

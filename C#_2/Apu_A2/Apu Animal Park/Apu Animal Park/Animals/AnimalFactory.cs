@@ -1,6 +1,6 @@
-﻿using Apu_Animal_Park.Birds;
-using Apu_Animal_Park.Insects;
-using Apu_Animal_Park.Marines;
+﻿//using Apu_Animal_Park.Birds;
+//using Apu_Animal_Park.Insects;
+//using Apu_Animal_Park.Marines;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -44,23 +44,23 @@ namespace Apu_Animal_Park.Animals
         /// <param name="numOfEyes">Number of eyes on insect</param>
         /// <param name="size">size in cm of insect</param>
         /// <returns></returns>
-        public static Insect CreateInsect(InsectSpecies species, int numOfEyes, double size)
-        {
-            Insect insect = null;
+        //public static Insect CreateInsect(InsectSpecies species, int numOfEyes, double size)
+        //{
+        //    Insect insect = null;
 
-            switch (species)
-            {
-                case InsectSpecies.Bee:
-                    insect = new Bee(numOfEyes, size);
-                    break;
+        //    switch (species)
+        //    {
+        //        case InsectSpecies.Bee:
+        //            insect = new Bee(numOfEyes, size);
+        //            break;
 
-                case InsectSpecies.Spider:
-                    insect = new Spider(numOfEyes, size);
-                    break;
-            }
+        //        case InsectSpecies.Spider:
+        //            insect = new Spider(numOfEyes, size);
+        //            break;
+        //    }
 
-            return insect;
-        }
+        //    return insect;
+        //}
 
         /// <summary>
         /// Creates a bird based on the specie
@@ -69,23 +69,23 @@ namespace Apu_Animal_Park.Animals
         /// <param name="wingSpan">Wing span of bird</param>
         /// <param name="flySpeed">Fly speed of bird</param>
         /// <returns>Returns a Bird </returns>
-        public static Bird CreateBird(BirdSpecies species, double wingSpan, double flySpeed)
-        {
-            Bird bird = null;
+        //public static Bird CreateBird(BirdSpecies species, double wingSpan, double flySpeed)
+        //{
+        //    Bird bird = null;
 
-            switch (species)
-            {
-                case BirdSpecies.Crow:
-                    bird = new Crow(wingSpan, flySpeed);
-                    break;
+        //    switch (species)
+        //    {
+        //        case BirdSpecies.Crow:
+        //            bird = new Crow(wingSpan, flySpeed);
+        //            break;
 
-                case BirdSpecies.Hawk:
-                    bird = new Hawk(wingSpan, flySpeed);
-                    break;
-            }
+        //        case BirdSpecies.Hawk:
+        //            bird = new Hawk(wingSpan, flySpeed);
+        //            break;
+        //    }
 
-            return bird;
-        }
+        //    return bird;
+        //}
 
         /// <summary>
         /// Creates Marine
@@ -94,23 +94,23 @@ namespace Apu_Animal_Park.Animals
         /// <param name="swimSpeed">Swim speed of animal</param>
         /// <param name="eatsFish">Eats fish [y/n]</param>
         /// <returns>Returns animal based on specie</returns>
-        public static Marine CreateMarine(MarineSpecies species, double swimSpeed, string eatsFish)
-        {
-            Marine marine = null;
+        //public static Marine CreateMarine(MarineSpecies species, double swimSpeed, string eatsFish)
+        //{
+        //    Marine marine = null;
 
-            switch (species)
-            {
-                case MarineSpecies.Dolphin:
-                    marine = new Dolphin(swimSpeed, eatsFish);
-                    break;
+        //    switch (species)
+        //    {
+        //        case MarineSpecies.Dolphin:
+        //            marine = new Dolphin(swimSpeed, eatsFish);
+        //            break;
 
-                case MarineSpecies.Shark:
-                    marine = new Shark(swimSpeed, eatsFish);
-                    break;
-            }
+        //        case MarineSpecies.Shark:
+        //            marine = new Shark(swimSpeed, eatsFish);
+        //            break;
+        //    }
 
-            return marine;
-        }
+        //    return marine;
+        //}
 
         /// <summary>
         /// Creates a reptile based on species

@@ -58,6 +58,8 @@
     <Compile Include="Animals\AnimalFactory.cs" />
     <Compile Include="Animals\AnimalManager.cs" />
     <Compile Include="Animals\AnimalTypes.cs" />
+    <Compile Include="Animals\FoodSchedule.cs" />
+    <Compile Include="Animals\IAnimal.cs" />
     <Compile Include="Birds\Bird.cs" />
     <Compile Include="Birds\Crow.cs" />
     <Compile Include="Birds\Hawk.cs" />

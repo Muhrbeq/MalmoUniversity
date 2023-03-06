@@ -90,7 +90,14 @@ namespace Apu_Animal_Park.Animals
 
         public abstract FoodSchedule GetFoodSchedule();
 
-        public abstract string GetExtraInfo();
+        public virtual string GetExtraInfo()
+        {
+            string strOut = string.Empty;
+
+            strOut = string.Format("Category: {0}\n", _category.ToString());
+            
+            return strOut;
+        }
     }
 
    

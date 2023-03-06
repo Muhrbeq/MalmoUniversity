@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Apu_Animal_Park.Animals;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,7 +12,7 @@ namespace Apu_Animal_Park
         private int _venomousScale;
         private int _lengthOfTail;
 
-
+        FoodSchedule _foodSchedule;
         public Snake() : this(0, 0)
         {
 
@@ -20,6 +21,7 @@ namespace Apu_Animal_Park
         public Snake(int amountOfLegs, int amountOfDaysUntilEggsHatch) : base(amountOfLegs, amountOfDaysUntilEggsHatch)
         {
             _venomousScale = 0;
+            SetFoodSchedule();
         }
 
         public int VenomousScale
@@ -38,6 +40,25 @@ namespace Apu_Animal_Park
             strOut += String.Format("Venomous scale: {0}\r", _venomousScale);
 
             return strOut;
+        }
+
+        private void SetFoodSchedule()
+        {
+            _foodSchedule = new FoodSchedule();
+            _foodSchedule.EaterType = EaterType.Omnivorous;
+            _foodSchedule.Add("Morning: Mouse");
+            _foodSchedule.Add("Lunch: Bananas");
+            _foodSchedule.Add("Evening: Rat");
+        }
+
+        public override FoodSchedule GetFoodSchedule()
+        {
+            return _foodSchedule;
+        }
+
+        public override string GetExtraInfo()
+        {
+            return ToString();
         }
     }
 }
